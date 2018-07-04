@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import logo from '../../assets/img/logo.svg';
 import '../../style/App.css';
+import {
+  testAction,
+} from '../actions/test';
 
 class App extends Component {
+  componentWillMount() {
+    const {
+      testAction
+    } = this.props;
+    testAction();
+  }
+
   render() {
+    const {
+      mensaje,
+    } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -11,7 +25,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          Exito
+          {mensaje}
           <br />
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
@@ -20,4 +34,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({
+  mensaje  
+}) => ({
+  mensaje
+});
+ 
+const mapDispatchToProps = {
+	testAction,
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
