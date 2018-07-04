@@ -39,10 +39,10 @@ const mapStateToProps = ({
 }) => ({
   mensaje
 });
-
-const mapDispatchToProps = dispatch => ({
-  testAction: () => dispatch(testAction())
- })
+ 
+const mapDispatchToProps = {
+	testAction,
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
