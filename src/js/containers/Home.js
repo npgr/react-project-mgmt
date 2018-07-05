@@ -6,12 +6,13 @@ import {
   testAction,
 } from '../actions/test';
 
-class App extends Component {
+class Home extends Component {
   componentWillMount() {
     const {
+      mensaje,
       testAction
     } = this.props;
-    testAction();
+    if (mensaje === "") testAction();
   }
 
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
 }
 
 const mapStateToProps = ({
-  mensaje  
+  customer: { mensaje }
 }) => ({
   mensaje
 });
@@ -45,4 +46,4 @@ const mapDispatchToProps = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
