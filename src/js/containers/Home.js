@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from '../../assets/img/logo.svg';
 import '../../style/App.css';
-import {
-  testAction,
-} from '../actions/test';
+/* import {
+    testAction,
+  } from '../actions/test';*/
 
 class Home extends Component {
-  componentWillMount() {
+  
+  /* componentWillMount() {
     const {
       mensaje,
       testAction
     } = this.props;
-    if (mensaje === "") testAction();
-  }
+    if (mensaje === "") this.props.testAction();
+  }*/
 
   render() {
     const {
@@ -41,9 +42,9 @@ const mapStateToProps = ({
   mensaje
 });
  
-const mapDispatchToProps = {
+/* const mapDispatchToProps = {
 	testAction,
-};
+};*/
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, null)(Home);
