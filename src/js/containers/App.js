@@ -1,6 +1,12 @@
-import React, { Fragment } from 'react';
-import { Route, Link } from 'react-router-dom'
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { Switch, Route, Link } from 'react-router-dom'
+import { injectIntl } from 'react-intl';
 import Home from './Home'
+import {
+  testAction,
+} from '../actions/test';
 
 const About = () => (
   <Fragment>
@@ -8,18 +14,48 @@ const About = () => (
   </Fragment>
 )
 
-const App = () => (
-  <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-    </header>
+class App extends Component {
+  /* constructor(props) {
+    super(props)
+    const {
+      testAction,
+      mensaje
+    } = this.props;
+    // if (mensaje === "") 
+    testAction();
+  }*/
 
-    <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
-    </main>
-  </div>
-)
+  componentDidMount() {
+    this.props.testAction();
+    console.log("language: ", this.props.intl.locale)
+    // console.log("ENV =", process.env)
+  }
 
-export default App
+  render() {
+    const {
+      intl: { messages: i18n }
+    } = this.props
+    return (
+      <div>
+        {i18n["app.title"]}
+        <header>
+          <Link to="/">Home</Link>
+          <Link to="/about-us">About</Link>
+        </header>
+
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about-us" component={About} />
+          </Switch>
+        </main>
+      </div>
+    )
+  }
+}
+
+const mapDispatchToProps = {
+	testAction,
+};
+
+export default injectIntl(withRouter(connect(null, mapDispatchToProps)(App)));
