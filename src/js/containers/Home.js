@@ -7,7 +7,6 @@ import '../../style/App.css';
   } from '../actions/test';*/
 
 class Home extends Component {
-  
   /* componentWillMount() {
     const {
       mensaje,
@@ -18,7 +17,7 @@ class Home extends Component {
 
   render() {
     const {
-      mensaje,
+      mensaje
     } = this.props;
     return (
       <div className="App">
@@ -41,10 +40,9 @@ const mapStateToProps = ({
 }) => ({
   mensaje
 });
- 
+
 /* const mapDispatchToProps = {
 	testAction,
 };*/
-
 
 export default connect(mapStateToProps, null)(Home);

@@ -4,28 +4,28 @@ import thunk from 'redux-thunk';
 import reducers from './js/reducers/index.js';
 
 // const initialState = {}
-const enhancers = []
+const enhancers = [];
 const middleware = [
-  thunk,
-]
+  thunk
+];
 
 if (process.env.NODE_ENV !== 'production') {
-  const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__
+  const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
 
   if (typeof devToolsExtension === 'function') {
-    enhancers.push(devToolsExtension())
+    enhancers.push(devToolsExtension());
   }
 }
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
   ...enhancers
-)
+);
 
 const store = createStore(
   reducers,
-// initialState,
+  // initialState,
   composedEnhancers
-)
+);
 
-export default store
+export default store;
