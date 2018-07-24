@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "description": "A project Detail",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "longInteger"    
+        },
+        "name": {
+            "type": "string",
+            "format": "projectName"    
+        },
+        "customer": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "longInteger"    
+              },
+              "name": {
+                  "type": "string",
+                  "format": "companyName"    
+              }
+            },
+            "required": [
+                "id",
+                "name"
+            ]
+        },
+        "status": {
+          "type": "string",
+          "format": "projectStatus"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "customer",
+        "status"
+    ]
+}
