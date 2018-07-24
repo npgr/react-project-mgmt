@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Switch, Route, Link } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
-import Home from './Home';
+//import Home from './Home';
+import Projects from './Projects';
 import {
   testAction
 } from '../actions/test';
@@ -17,9 +18,18 @@ const About = () => (
   </Fragment>
 );
 
+const notFoundPage = () => (
+  <div>
+    Not Found Page
+  </div>
+);
+
 class App extends Component {
   /* constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      prueba :'Exito'
+    };
     const {
       testAction,
       mensaje
@@ -56,8 +66,10 @@ class App extends Component {
 
         <main>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Projects} />
             <Route exact path="/about-us" component={About} />
+            <Route component={notFoundPage} />
+            {/* <Redirect to="/404" /> */}
           </Switch>
         </main>
       </div>

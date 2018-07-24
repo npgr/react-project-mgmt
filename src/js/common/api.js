@@ -108,13 +108,15 @@ export default class Api {
       return parsedBody;
     }
 
-    switch (response.status) {
+    /*switch (response.status) {
       case 401:
         // redirectToLogin();
+		break;
       default:
-    }
-
-    throw new BackendError(response, parsedBody);
+    }*/
+	//debugger;
+	//return Promise.reject({ response });
+	throw new BackendError(response, parsedBody);
   }
 
   genericRequest(method, originalUrl, options) {
@@ -191,6 +193,7 @@ export default class Api {
         switch (status) {
           case 401:
             // redirectToLogin();
+			break;
           default:
             reject(new BackendError(response, parsedBody));
         }
