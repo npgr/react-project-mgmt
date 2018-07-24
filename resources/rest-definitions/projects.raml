@@ -1,0 +1,52 @@
+#%RAML 0.8
+title: TEST_Definition
+version: v1
+baseUri: http://localhost:3031
+mediaType: application/json
+schemas:
+  - projectDetail: !include schemas/project/detail.json
+  - projectList: !include schemas/project/list.json
+
+# Servicio Login en PRU
+# https://axprepruweb1.central.inditex.grp/appwsc-tempegestionmuestrasjava/services/rest/usuario/antoniopag
+
+/project:
+# post:
+    # description: Create a New Project
+    # responses:
+      # 200:
+        # body:
+          # schema: crearProyectoResponse
+  /{projectId}:
+    get:
+      description: Get project detail
+      responses:
+        200:
+          body:
+            schema: projectDetail
+#  put:
+#    description: Change Project
+#    body: 
+#      application/json:
+#        schema: projectUpdate
+#    responses:
+#      200:
+#  put:
+#    description: Change Project
+#    body: 
+#      application/json:
+#        schema: projectUpdate
+#    responses:
+#      200:
+/projects:
+  get:
+    description: Get a list of Projects
+    queryParameters:
+      customerId:
+        type: string
+        required: true
+        example: X22
+    responses:
+      200:
+        body:
+          schema: projectList
