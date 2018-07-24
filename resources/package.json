@@ -1,0 +1,16 @@
+{
+  "name": "gmcommon",
+  "version": "1.0.0",
+  "description": "RAMLS Definitions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "raml-mocker": "^0.2.7",
+    "raml-mocker-server": "^0.1.6"
+  }
+}
