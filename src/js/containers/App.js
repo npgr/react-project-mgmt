@@ -1,16 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
+import PropTypes from 'prop-types';
+import AppHeader from './AppHeader';
 //import Home from './Home';
 import Projects from './Projects';
-import {
-  testAction
-} from '../actions/test';
-import {
-  setI18n
-} from '../actions/i18n';
+import { setI18n } from '../actions/i18n';
+import { fetchCredentials } from '../actions/user';
 
 const About = () => (
   <Fragment>
@@ -30,12 +28,6 @@ class App extends Component {
     this.state = {
       prueba :'Exito'
     };
-    const {
-      testAction,
-      mensaje
-    } = this.props;
-    // if (mensaje === "")
-    testAction();
   }*/
 
   componentDidMount() {
@@ -44,11 +36,12 @@ class App extends Component {
         locale,
         messages: literals
       },
+      fetchCredentials,
       setI18n
     } = this.props;
-    this.props.testAction();
     console.log('language: ', locale);
     // console.log("ENV =", process.env)
+    fetchCredentials();
     setI18n(locale, literals);
   }
 
@@ -57,13 +50,8 @@ class App extends Component {
       intl: { messages: i18n }
     } = this.props;
     return (
-      <div>
-        {i18n['app.title']}
-        <header>
-          <Link to="/">Home</Link>
-          <Link to="/about-us">About</Link>
-        </header>
-
+      <Fragment>
+        <AppHeader title={i18n['app.title']}/>
         <main>
           <Switch>
             <Route exact path="/" component={Projects} />
@@ -72,13 +60,22 @@ class App extends Component {
             {/* <Redirect to="/404" /> */}
           </Switch>
         </main>
-      </div>
+      </Fragment>
     );
   }
 }
 
+App.propTypes = {
+  intl: PropTypes.shape({
+    locale: PropTypes.string,
+    messages: PropTypes.object
+  }),
+  fetchCredentials: PropTypes.func,
+  setI18n: PropTypes.func
+};
+
 const mapDispatchToProps = {
-  testAction,
+  fetchCredentials,
   setI18n
 };
 

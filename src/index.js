@@ -10,6 +10,7 @@ import messagesEs from './translations/es.json';
 import messagesEn from './translations/en.json';
 import store,  {/* history */} from './store';
 import './style/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './js/containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
