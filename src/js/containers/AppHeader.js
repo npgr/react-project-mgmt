@@ -12,17 +12,17 @@ class AppHeader extends Component {
       user: { userName }
     } = this.props;
     return (
-	  <Navbar
-		  className="navbar-dark navbar-expand-sm justify-content-between navbar-text-color"
-		  color="dark"
-		  xfixed="top"
-	  >
+      <Navbar
+        className="navbar-dark navbar-expand-sm justify-content-between navbar-text-color"
+        color="dark"
+        xfixed="top"
+      >
         <NavbarBrand href="#">AppManager</NavbarBrand>
         <Nav>
-		      <NavItem>{title}</NavItem>
+          <NavItem>{title}</NavItem>
         </Nav>
         <NavLink className="navbar-text-color link" href="#/about-us">{userName}</NavLink>
-	  </Navbar>
+      </Navbar>
     );
     //<Link to="/">Home</Link>
   }
