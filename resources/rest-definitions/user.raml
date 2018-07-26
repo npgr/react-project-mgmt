@@ -1,0 +1,17 @@
+#%RAML 0.8
+title: User Services
+version: v1
+baseUri: http://localhost:3031
+mediaType: application/json
+schemas:
+  - credentials: !include schemas/user/credentials.json
+
+/user:
+  /credentials:
+    get:
+      description: Get user credentials
+      responses:
+        200:
+          body:
+            schema: credentials
+
