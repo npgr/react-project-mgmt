@@ -4,7 +4,7 @@ import _ from 'underscore';
 export default function errorMiddleware() {
   return next => action => {
     const types = {
-      FETCH_PROJECTS: true,
+      FETCH_PROJECTS: true
     };
 
     // If not a promise, continue on
