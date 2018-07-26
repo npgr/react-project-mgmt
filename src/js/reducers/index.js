@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import configuration from './configuration';
-import i18n from './i18n';
 import customer from './customer/customer';
+import i18n from './i18n';
 import projects from './projects';
+import user from './user';
 
 export default combineReducers({
   configuration,
-  i18n,
   customer,
-  projects
+  i18n,
+  projects,
+  user
 });
