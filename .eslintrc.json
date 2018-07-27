@@ -54,7 +54,7 @@
         "no-bitwise": 0,
         "no-caller": 2,
         "no-cond-assign": 0,
-        "no-debugger": 2,
+        "no-debugger": 1,
         "no-empty": [2, {
             "allowEmptyCatch": true
         }],
@@ -110,7 +110,8 @@
         "eol-last": "error",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
-        "react/prop-types": "error"
+        "react/prop-types": "error",
+        "no-console": "warn"
     },
     "plugins": [
         "react"
