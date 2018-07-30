@@ -5,8 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import AppHeader from './AppHeader';
-//import Home from './Home';
-import Projects from './Projects';
+import AppNotifications from './AppNotifications';
+import Projects from './Projects/Projects';
 import { setI18n } from '../actions/i18n';
 import { fetchCredentials } from '../actions/user';
 
@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <Fragment>
         <AppHeader />
-        {/* <Notifications /> */}
+        <AppNotifications />
         <main>
           <Switch>
             <Route exact path="/" render={props => this.renderComponentWithTitle('Projects', props)} />
