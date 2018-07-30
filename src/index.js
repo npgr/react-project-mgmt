@@ -6,12 +6,12 @@ import { HashRouter } from 'react-router-dom';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import localeEn from 'react-intl/locale-data/en';
 import localeEs from 'react-intl/locale-data/es';
-import messagesEs from './translations/es.json';
-import messagesEn from './translations/en.json';
+import messagesEs from './i18n/es.json';
+import messagesEn from './i18n/en.json';
 import store,  {/* history */} from './store';
-import './style/index.css';
+import './style/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './js/containers/App';
+import App from './js/containers/App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
 addLocaleData([...localeEn, ...localeEs]);

@@ -39,8 +39,12 @@ AppHeader.propTypes = {
 };
 
 const mapStateToProps = ({
+  configuration: {
+    title = ''
+  },
   user
 }) => ({
+  title,
   user
 });
 

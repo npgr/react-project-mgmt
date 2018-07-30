@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "title": "Proyectos",
+    "header": {
+      "projectName": "Nombre Proyecto...",
+      "selectCustomer": "Seleccionar Cliente...",
+      "selectStatus": "Seleccionar Status..."
+    },
+    "card": {
+      "customer": "Cliente",
+      "status": "status"
+    }
+  } 
+}

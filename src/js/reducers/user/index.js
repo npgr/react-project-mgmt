@@ -10,7 +10,7 @@ const defaultState = {
   profile: ''
 };
 
-export default (state = defaultState, { type, payload, meta }) => {
+export default (state = defaultState, { type, payload }) => {
   switch (type) {
     case fulfilledType(FETCH_CREDENTIALS):
       return {

@@ -5,8 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import AppHeader from './AppHeader';
-//import Home from './Home';
-import Projects from './Projects';
+import AppNotifications from './AppNotifications';
+import Projects from './Projects/Projects';
 import { setI18n } from '../actions/i18n';
 import { fetchCredentials } from '../actions/user';
 
@@ -23,14 +23,7 @@ const notFoundPage = () => (
 );
 
 class App extends Component {
-  /* constructor(props) {
-    super(props);
-    this.state = {
-      prueba :'Exito'
-    };
-  }*/
-
-  componentDidMount() {
+  componentWillMount() {
     const {
       intl: {
         locale,
@@ -45,16 +38,24 @@ class App extends Component {
     setI18n(locale, literals);
   }
 
+  renderComponentWithTitle(component, props) {
+    switch (component) {
+      case 'Projects':
+        return <Projects {...props} />;
+      default:
+        return <notFoundPage {...props} />;
+    }
+  }
+
   render() {
-    const {
-      intl: { messages: i18n }
-    } = this.props;
     return (
       <Fragment>
-        <AppHeader title={i18n['app.title']}/>
+        <AppHeader />
+        <AppNotifications />
         <main>
           <Switch>
-            <Route exact path="/" component={Projects} />
+            <Route exact path="/" render={props => this.renderComponentWithTitle('Projects', props)} />
+            <Route exact path="/projects" component={Projects} />
             <Route exact path="/about-us" component={About} />
             <Route component={notFoundPage} />
             {/* <Redirect to="/404" /> */}
@@ -66,6 +67,7 @@ class App extends Component {
 }
 
 App.propTypes = {
+  title: PropTypes.string,
   intl: PropTypes.shape({
     locale: PropTypes.string,
     messages: PropTypes.object
