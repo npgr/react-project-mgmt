@@ -4,16 +4,19 @@ import {
 
 const defaultState = {
   locale: 'en',
-  literals: {}
+  literals: {
+    projects: {}
+  }
 };
 
 export default (state = defaultState, { type, payload, meta }) => {
   switch (type) {
-    case SET_I18N:
+    case SET_I18N: {
       return {
         ...state,
         ...payload
       };
+    }
     default:
       return state;
   }

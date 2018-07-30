@@ -1,0 +1,41 @@
+[{
+  "id": 72934,
+  "name": "Project Stark and Sons",
+  "customer": {
+    "id": 11188,
+    "name": "Hansen, Hayes and Ruecker"
+  },
+  "status": "inactive"
+}, {
+  "id": 18802,
+  "name": "Project McKenzie, Lesch and Marquardt",
+  "customer": {
+    "id": 55123,
+    "name": "Friesen - Kozey"
+  },
+  "status": "inactive"
+}, {
+  "id": 19661,
+  "name": "Project Jast - Howe",
+  "customer": {
+    "id": 20054,
+    "name": "Hackett - Yundt"
+  },
+  "status": "active"
+}, {
+  "id": 46202,
+  "name": "Project Bruen Inc",
+  "customer": {
+    "id": 28206,
+    "name": "Lubowitz - Kuhic"
+  },
+  "status": "inactive"
+}, {
+  "id": 64939,
+  "name": "Project Rempel Group",
+  "customer": {
+    "id": 42893,
+    "name": "Lehner - Mosciski"
+  },
+  "status": "inactive"
+}]

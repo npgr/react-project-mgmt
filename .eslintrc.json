@@ -12,7 +12,8 @@
         "browser": true,
         "jquery": true,
         "node": true,
-        "mocha": true
+        "mocha": true,
+        "jest/globals": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
@@ -54,7 +55,7 @@
         "no-bitwise": 0,
         "no-caller": 2,
         "no-cond-assign": 0,
-        "no-debugger": 2,
+        "no-debugger": 1,
         "no-empty": [2, {
             "allowEmptyCatch": true
         }],
@@ -109,9 +110,17 @@
         "yoda": 0,
         "eol-last": "error",
         "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "react/jsx-uses-vars": "error",
+        "react/prop-types": "error",
+        "no-console": "warn",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ]
 }
