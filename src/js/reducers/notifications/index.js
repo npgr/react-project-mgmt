@@ -1,7 +1,7 @@
 import { SEND_NOTIFICATION, DELETE_NOTIFICATION } from '../../actions/notifications';
 
 const defaultState = [
-  {
+  /*{
     type: 'error',
     message: 'mensaje error'
   },
@@ -16,7 +16,7 @@ const defaultState = [
   {
     type: 'success',
     message: 'mensaje Exito'
-  }
+  }*/
 ];
 
 export default (state = defaultState, { type, payload }) => {
