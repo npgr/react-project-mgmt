@@ -19,7 +19,7 @@ class AppHeader extends Component {
       >
         <NavbarBrand href="#">AppManager</NavbarBrand>
         <Nav>
-          <NavItem>{title}</NavItem>
+          <NavItem className="app-title">{title}</NavItem>
         </Nav>
         <NavLink className="navbar-text-color link" href="#/about-us">{userName}</NavLink>
       </Navbar>
