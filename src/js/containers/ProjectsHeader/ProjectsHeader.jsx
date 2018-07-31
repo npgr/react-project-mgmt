@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { Col, Label, Input } from 'reactstrap';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Select from 'react-select';
 import style from './ProjectsHeader.css.js';
-import {
-  setProjectsFilter
-} from '../../actions/projects';
+import { setProjectsFilter } from '../../actions/projects';
 
 class ProjectsHeader extends Component {
   render() {
