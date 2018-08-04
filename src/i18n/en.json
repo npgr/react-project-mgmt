@@ -1,4 +1,11 @@
 {
+  "navigation": {
+    "create": "Create",
+    "project": "Project",
+    "projects": "Projects",
+    "task": "Task",
+    "tasks": "Tasks"
+  },
   "projects": {
     "title": "Projects",
     "header": {
@@ -8,7 +15,12 @@
     },
     "card": {
       "customer": "Customer",
-      "status": "status"
+      "status": "Status"
+    },
+    "detail": {
+      "customer": "Customer",
+      "status": "Status",
+      "close": "Close"
     }
   }
 }
