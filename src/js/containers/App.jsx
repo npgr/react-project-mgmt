@@ -4,9 +4,10 @@ import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import AppHeader from './AppHeader';
+import AppNavigation from './AppNavigation';
 import AppNotifications from './AppNotifications';
 import Projects from './Projects/Projects';
+import CreateProject from './CreateProject/CreateProject';
 import { setI18n } from '../actions/i18n';
 import { fetchCredentials } from '../actions/user';
 
@@ -50,8 +51,9 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <AppHeader />
+        <AppNavigation />
         <AppNotifications />
+        <CreateProject />
         <main>
           <Switch>
             <Route exact path="/" render={props => this.renderComponentWithTitle('Projects', props)} />
@@ -67,13 +69,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-  title: PropTypes.string,
   intl: PropTypes.shape({
     locale: PropTypes.string,
     messages: PropTypes.object
-  }),
-  fetchCredentials: PropTypes.func,
-  setI18n: PropTypes.func
+  }).isRequired,
+  fetchCredentials: PropTypes.func.isRequired,
+  setI18n: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = {

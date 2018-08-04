@@ -1,4 +1,11 @@
 {
+  "navigation": {
+    "create": "Crear",
+    "project": "Proyecto",
+    "projects": "Proyectos",
+    "task": "Tarea",
+    "tasks": "Tareas"
+  },
   "projects": {
     "title": "Proyectos",
     "header": {
@@ -8,7 +15,12 @@
     },
     "card": {
       "customer": "Cliente",
-      "status": "status"
+      "status": "Status"
+    },
+    "detail": {
+      "customer": "Cliente",
+      "status": "Status",
+      "close": "Cerrar"
     }
   } 
 }

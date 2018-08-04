@@ -112,6 +112,7 @@
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "react/prop-types": "error",
+        "react/no-unused-prop-types": "error",
         "no-console": "warn",
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",

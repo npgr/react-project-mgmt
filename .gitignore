@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /resources/node_modules
+/control/mockups
 
 # testing
 /coverage
