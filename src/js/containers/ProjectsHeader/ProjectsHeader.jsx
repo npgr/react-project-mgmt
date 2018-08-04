@@ -63,9 +63,13 @@ class ProjectsHeader extends Component {
 }
 
 ProjectsHeader.propTypes = {
-  literals: PropTypes.object,
-  projectsList: PropTypes.array,
-  setProjectsFilter: PropTypes.func
+  literals: PropTypes.shape({
+    projectName: PropTypes.string.isRequired,
+    selectCustomer: PropTypes.string.isRequired,
+    selectStatus: PropTypes.string.isRequired
+  }).isRequired,
+  projectsList: PropTypes.array.isRequired,
+  setProjectsFilter: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({
