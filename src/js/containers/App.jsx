@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import AppHeader from './AppHeader';
+import AppNavigation from './AppNavigation';
 import AppNotifications from './AppNotifications';
 import Projects from './Projects/Projects';
 import CreateProject from './CreateProject/CreateProject';
@@ -51,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <AppHeader />
+        <AppNavigation />
         <AppNotifications />
         <CreateProject />
         <main>
