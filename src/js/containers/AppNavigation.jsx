@@ -69,12 +69,12 @@ class AppNavigation extends Component {
 
 AppNavigation.propTypes = {
   literals: PropTypes.shape({
-    project: PropTypes.string,
-    projects: PropTypes.string,
-    task: PropTypes.string,
-    tasks: PropTypes.string,
-    create: PropTypes.string
-  }).isRequired,
+    project: PropTypes.string.isRequired,
+    projects: PropTypes.string.isRequired,
+    task: PropTypes.string.isRequired,
+    tasks: PropTypes.string.isRequired,
+    create: PropTypes.string.isRequired
+  }),
   user: PropTypes.shape({
     userName: PropTypes.string,
     name: PropTypes.string,
