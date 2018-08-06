@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/resources/node_modules
+/resources/localApp/node_modules
 /control/mockups
 
 # testing
