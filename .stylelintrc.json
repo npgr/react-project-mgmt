@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "at-rule-blacklist": [],
+    "at-rule-empty-line-before": "always",
+    "at-rule-name-case": "lower",
+    "at-rule-name-newline-after": "always",
+    "at-rule-name-space-after": "always",
+    "at-rule-no-unknown": true,
+    "at-rule-no-vendor-prefix": true,
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-semicolon-space-before": "never",
+    "at-rule-whitelist": [],
+    "block-closing-brace-empty-line-before": "never",
+    "property-no-unknown": true,
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always-multi-line"
+  }
+}

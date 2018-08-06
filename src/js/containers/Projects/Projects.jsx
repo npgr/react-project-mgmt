@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import ProjectsHeader from '../ProjectsHeader/ProjectsHeader';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import { setAppTitle } from '../../actions/configuration';
 import {
   fetchProjects,
   showProjectDetail
@@ -14,16 +13,6 @@ class Projects extends Component {
 
   componentWillMount() {
     if (!this.props.test) this.props.fetchProjects();
-    this.setTitle();
-  }
-
-  setTitle() {
-    const {
-      literals: {
-        title = ''
-      }
-    } = this.props;
-    this.props.setAppTitle(title);
   }
 
   render() {
@@ -66,12 +55,10 @@ class Projects extends Component {
 Projects.propTypes = {
   test: PropTypes.bool,
   literals: PropTypes.shape({
-    title: PropTypes.string.isRequired,
     card: PropTypes.object.isRequired
   }).isRequired,
   filters: PropTypes.object.isRequired,
   projectList: PropTypes.array.isRequired,
-  setAppTitle: PropTypes.func.isRequired,
   fetchProjects: PropTypes.func.isRequired,
   showProjectDetail: PropTypes.func.isRequired
 };
@@ -93,7 +80,6 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = {
-  setAppTitle,
   fetchProjects,
   showProjectDetail
 };
