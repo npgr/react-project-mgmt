@@ -28,7 +28,6 @@ export default function errorMiddleware() {
       // Dispatch initial pending promise, but catch any errors
       return next(action).catch(error => {
         console.warn(error);
-
         return error;
       });
     }

@@ -1,9 +1,10 @@
-// import { fulfilledType, pendingType, rejectedType } from '../../common/utils';
 import {
-  SET_PROJECTS_FILTER
+  SET_PROJECTS_FILTER,
+  TOGGLE_CREATE_PROJECT
 } from '../../actions/projects';
 
 const defaultState = {
+  showCreateProject: false,
   filters: {
     project: null,
     customer: null,
@@ -11,7 +12,7 @@ const defaultState = {
   }
 };
 
-export default (state = defaultState, { type, payload, meta }) => {
+export default (state = defaultState, { type, payload }) => {
   switch (type) {
     case SET_PROJECTS_FILTER:
       return {
@@ -20,6 +21,11 @@ export default (state = defaultState, { type, payload, meta }) => {
           ...state.filters,
           [payload.field]: payload.value
         }
+      };
+    case TOGGLE_CREATE_PROJECT:
+      return {
+        ...state,
+        showCreateProject: !state.showCreateProject
       };
     default:
       return state;

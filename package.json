@@ -18,6 +18,7 @@
     "reactstrap": "^6.3.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
+    "redux-form": "^7.4.2",
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0"
   },
@@ -26,7 +27,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test:staged": "set CI=true && npm test",
+    "eject": "react-scripts eject",
+    "precommit": "npm run test:staged && lint-staged",
+    "precommit2": "set CI=true && npm test && npm run eslint",
+    "eslint": "eslint src/* --ext .js,.jsx --cache",
+    "stylelint": "stylelint src/style/main.css"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -35,9 +41,26 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-react-intl": "^2.0.0",
     "eslint-plugin-jest": "^21.18.0",
+    "husky": "^0.14.3",
     "jest": "^23.4.1",
+    "lint-staged": "^7.2.0",
     "react-addons-test-utils": "^15.6.2",
-    "redux-mock-store": "^1.5.3"
+    "stylelint": "^9.4.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint",
+      "git add"
+    ]
+  },
+  "xhusky": {
+    "hooks": {
+      "pre-commit": "babel-node resources/git/precommit.js && npm test"
+    }
   },
   "proxy": {
     "/api": {

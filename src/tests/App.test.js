@@ -3,14 +3,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, {/* shallow, mount, render */ } from 'enzyme';
 import { expect } from 'chai';
 import { /*mountWithIntl,*/ shallowWithIntl, loadTranslation } from 'enzyme-react-intl';
-// import { shallow } from 'enzyme';
 import App from '../js/containers/App.jsx';
-import AppHeader from '../js/containers/AppHeader.jsx';
-import Projects from '../js/containers/Projects/Projects.jsx';
+import AppNavigation from '../js/containers/AppNavigation.jsx';
+import AppNotifications from '../js/containers/AppNotifications.jsx';
+//import CreateProject from '../js/containers/CreateProject/CreateProject.jsx';
 import store from '../store';
-//import { fetchProjects } from '../js/actions/projects';
-import { setAppTitle } from '../js/actions/configuration';
-// import chai, { expect } from 'chai';
 // import chaiEnzyme from 'chai-enzyme';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -27,50 +24,36 @@ describe('<App />', () => {
   it('it has a object property intl.messages', () => {
     expect(component.props().intl).to.have.property('messages').to.be.a('object');
   });
+  // it('Render <AppNavigation /> inside <App />', () => {
+  //   //console.log(component.dive());
+  //   expect(component.dive().find(AppNavigation)).to.have.length(1);
+  // });
+  // it('Render <CreateProject /> inside <App />', () => {
+  //   expect(component.dive().find(CreateProject)).to.have.length(1);
+  // });
 });
 
-describe('<Projects />', () => {
-
-  const component = shallowWithIntl(<Projects store={store} />);
-
-  it('renders 1 <Projects /> component', () => {
+describe('<AppNavigation />', () => {
+  let component = null;
+  it('renders 1 <AppNavigation /> component', () => {
+    component = shallowWithIntl(<AppNavigation store={store} />);
     expect(component).to.have.length(1);
   });
-  it('It has property store', () => {
-    expect(component.props()).to.have.property('store');
-  });
-  it('It has property literals type Object', () => {
-    expect(component.props()).to.have.property('literals').to.be.a('object');
-  });
-  it('It has property filters type object', () => {
-    expect(component.props()).to.have.property('filters').to.be.a('object');
-  });
-  it('It has property projectList type array', () => {
-    expect(component.props()).to.have.property('projectList').to.be.a('array');
-  });
-  it('It dispatch action set title() ', () => {
+  /*it('It has a string property title = Mi Titulo', () => {
     store.dispatch(setAppTitle('Mi Titulo2'));
-    expect(store.getState().configuration.title).equals('Mi Titulo2');
-  });
-  it('FetchProjects() ', () => {
-    //store.dispatch(fetchProjects());
-    store.dispatch({
-      type: 'FETCH_PROJECTS_FULFILLED',
-      payload: [{id:10, name: 'xx'}]
-    });
-    expect(store.getState().projects.list.data[0].id).equals(10);
-  });
-});
-
-describe('<AppHeader />', () => {
-  let component = null;
-  it('It has a string property title = Mi Titulo', () => {
-    component = shallowWithIntl(<AppHeader store={store} />);
+    component = shallowWithIntl(<AppNavigation store={store} />);
     expect(component.props()).to.have.property('title').to.be.a('string').equals('Mi Titulo2');
   });
   it('Render title = Mi Titulo2', () => {
-    //console.log(component.dive().find('.app-title').render().text());
     expect(component.dive().find('.app-title').render().text()).equals('Mi Titulo2');
+  });*/
+});
+
+describe('<AppNotifications />', () => {
+  let component = null;
+  it('renders 1 <AppNotifications /> component', () => {
+    component = shallowWithIntl(<AppNotifications store={store} />);
+    expect(component).to.have.length(1);
   });
 });
 
